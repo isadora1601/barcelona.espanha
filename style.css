@@ -1,0 +1,686 @@
+/* ==========================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================== */
+:root {
+  --bg-cream: #FAF8F5;
+  --bg-white: #FFFFFF;
+  --text-dark: #1F1F1F;
+  --text-muted: #666666;
+  --red-primary: #D92B38;
+  --red-hover: #B81D29;
+  --yellow-accent: #E2A012;
+  --dark-footer: #171615;
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 90px 0;
+}
+
+.bg-alt {
+  background-color: #f7f4ee;
+}
+
+/* Tag de Seção */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--red-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-tag.tag-yellow {
+  color: var(--yellow-accent);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.section-title.text-white {
+  color: #ffffff;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 650px;
+  margin-bottom: 48px;
+}
+
+.section-subtitle.text-white-muted {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Botões Globais */
+.btn-red {
+  background-color: var(--red-primary);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-red:hover {
+  background-color: var(--red-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 24px 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Lora', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-bars {
+  display: flex;
+  gap: 3px;
+  height: 18px;
+}
+
+.logo-bars span {
+  width: 4px;
+  height: 100%;
+  background-color: var(--yellow-accent);
+  border-radius: 2px;
+}
+
+.logo-bars span:nth-child(2),
+.logo-bars span:nth-child(4) {
+  background-color: var(--red-primary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-menu a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-menu a:hover {
+  color: #fff;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+  position: relative;
+  height: 90vh;
+  min-height: 600px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.75) 100%),
+              url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding-top: 80px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--yellow-accent);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+/* ==========================================
+   PONTOS TURÍSTICOS (CARDS GRID)
+   ========================================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-body h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.card-body p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.card-link {
+  color: var(--red-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.card-link:hover {
+  gap: 10px;
+}
+
+/* ==========================================
+   GASTRONOMIA SECTION
+   ========================================== */
+.gastronomy-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.gastronomy-left h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.gastronomy-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.food-item {
+  display: flex;
+  gap: 16px;
+}
+
+.food-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #FCE8E8;
+  color: var(--red-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.food-details h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.food-details p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.gastronomy-gallery {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.gallery-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gallery-stack-img {
+  width: 100%;
+  height: 182px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* ==========================================
+   FC BARCELONA SECTION (GRADIENTE ESCURO)
+   ========================================== */
+.barca-section {
+  background: linear-gradient(135deg, #4A001F 0%, #7A0A32 45%, #0B3C83 100%);
+  color: #fff;
+}
+
+.barca-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.stadium-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.barca-info p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.barca-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: var(--yellow-accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.legends-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legend-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+}
+
+.legend-info h4 {
+  font-size: 0.95rem;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.legend-info p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 50%;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.stat-number {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--yellow-accent);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================
+   CULTURA & ARTE SECTION
+   ========================================== */
+.culture-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.culture-left h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.culture-left p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.culture-block {
+  margin-bottom: 20px;
+}
+
+.culture-block h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.culture-block p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.culture-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+/* ==========================================
+   CURIOSIDADES (4 CARDS)
+   ========================================== */
+.curiosities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.curiosity-card {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: 28px 24px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.curiosity-number {
+  font-family: 'Lora', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--yellow-accent);
+  margin-bottom: 12px;
+}
+
+.curiosity-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.curiosity-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  background-color: var(--dark-footer);
+  color: #fff;
+  padding: 80px 0 30px 0;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.footer-about p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin-top: 16px;
+  max-width: 320px;
+}
+
+.footer-col h5 {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  color: var(--yellow-accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MOBILE & TABLET)
+   ========================================== */
+@media (max-width: 992px) {
+  .cards-grid,
+  .curiosities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gastronomy-layout,
+  .barca-grid,
+  .culture-layout {
+    grid-template-columns: 1fr;
+  }
+  .stats-row {
+    max-width: 100%;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .nav-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid,
+  .curiosities-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
